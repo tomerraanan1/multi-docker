@@ -9,15 +9,15 @@ script:
     - docker run -e CI=true tomerraanan1/react-test npm test
 
 after_sucess:
-    - docker build -t tomerraanan1/multi-client ./client
-    - docker build -t tomerraanan1/multi-nginx ./nginx
-    - docker build -t tomerraanan1/multi-server ./server
-    - docker build -t tomerraanan1/multi-worker ./worker
+    - docker build -t tomerdocker1/multi-client ./client
+    - docker build -t tomerdocker1/multi-nginx ./nginx
+    - docker build -t tomerdocker1/multi-server ./server
+    - docker build -t tomerdocker1/multi-worker ./worker
 
     - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_ID" --password-stdin
 
-    - docker push tomerraanan1/multi-client
-    - docker push tomerraanan1/multi-nginx
-    - docker push tomerraanan1/multi-server
-    - docker push tomerraanan1/multi-worker
+    - docker push tomerdocker1/multi-client
+    - docker push tomerdocker1/multi-nginx
+    - docker push tomerdocker1/multi-server
+    - docker push tomerdocker1/multi-worker
 
